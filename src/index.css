@@ -1,0 +1,213 @@
+:root {
+  --primary: #ec4899;
+  /* Pink 500 */
+  --secondary: #be185d;
+  /* Pink 700 */
+  --accent: #db2777;
+  /* Pink 600 */
+  --accent-hover: #9d174d;
+  /* Pink 800 */
+  --background: #fdf2f8;
+  /* Pink 50 */
+  --surface: #ffffff;
+  --text-main: #500724;
+  /* Pink 950 - Very dark for readability */
+  --text-muted: #9d174d;
+  /* Pink 800 - Softer pink text */
+  --border: #fbcfe8;
+  /* Pink 200 */
+
+  --shadow-sm: 0 1px 2px 0 rgb(236 72 153 / 0.1);
+  --shadow-md: 0 4px 6px -1px rgb(236 72 153 / 0.15), 0 2px 4px -2px rgb(236 72 153 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(236 72 153 / 0.15), 0 4px 6px -4px rgb(236 72 153 / 0.1);
+
+  --radius: 0.75rem;
+  /* Softer, rounder corners */
+  --font-sans: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif;
+  /* Try to make it look friendlier */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--background);
+  color: var(--text-main);
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Utilities */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--secondary);
+}
+
+.btn-accent {
+  background-color: var(--accent);
+  color: white;
+}
+
+.btn-accent:hover {
+  background-color: var(--accent-hover);
+}
+
+.card {
+  background-color: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Responsive Grid */
+.responsive-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* Default to 2 columns for mobile */
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .responsive-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    /* Desktop/Tablet behavior */
+    gap: 2rem;
+  }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  :root {
+    --radius: 0.5rem;
+    /* Smaller radius on mobile */
+  }
+
+  h1 {
+    font-size: 2rem !important;
+  }
+
+  h2 {
+    font-size: 1.5rem !important;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Item Card Styles */
+.item-card-image {
+  height: 200px;
+  overflow: hidden;
+  background-color: #f1f5f9;
+}
+
+.item-content {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.item-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-main);
+}
+
+.item-desc {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  flex: 1;
+}
+
+.item-price {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: var(--accent);
+}
+
+/* Mobile Overrides for Items */
+@media (max-width: 768px) {
+  .item-card-image {
+    height: 140px;
+    /* Reduced height */
+  }
+
+  .item-content {
+    padding: 0.75rem;
+    /* Reduced padding */
+  }
+
+  .item-title {
+    font-size: 0.95rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .item-desc {
+    font-size: 0.75rem;
+    /* Smaller description */
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+  }
+
+  .item-price {
+    font-size: 0.95rem;
+    /* Smaller price */
+  }
+}

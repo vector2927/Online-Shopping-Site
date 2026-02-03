@@ -1,0 +1,130 @@
+.navbar {
+    background-color: var(--surface);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow-sm);
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 4rem;
+    /* 64px */
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--primary);
+    transition: opacity 0.2s;
+}
+
+.navbar-logo:hover {
+    opacity: 0.8;
+}
+
+.logo-icon {
+    color: var(--accent);
+}
+
+.navbar-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-link {
+    font-weight: 500;
+    color: var(--text-muted);
+    transition: color 0.2s;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: var(--primary);
+}
+
+.nav-link.admin-link {
+    color: var(--accent);
+    padding: 0.25rem 0.75rem;
+    background-color: rgb(59 130 246 / 0.1);
+    border-radius: var(--radius);
+}
+
+.navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.cart-btn {
+    background: none;
+    color: var(--text-main);
+    position: relative;
+    padding: 0.5rem;
+    transition: transform 0.2s;
+}
+
+.cart-btn:hover {
+    transform: scale(1.1);
+}
+
+.cart-badge {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    background-color: #ef4444;
+    color: white;
+    font-size: 0.75rem;
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.menu-btn {
+    background: none;
+    color: var(--text-main);
+    display: none;
+    /* Hidden by default */
+}
+
+.mobile-menu {
+    background-color: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.mobile-nav-link {
+    font-weight: 500;
+    padding: 0.75rem;
+    border-radius: var(--radius);
+    color: var(--text-main);
+}
+
+.mobile-nav-link:hover {
+    background-color: var(--background);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .desktop-only {
+        display: none;
+    }
+
+    .menu-btn.mobile-only {
+        display: block;
+    }
+}
