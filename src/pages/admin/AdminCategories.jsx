@@ -36,8 +36,8 @@ const AdminCategories = () => {
     };
 
     return (
-        <div style={{ padding: '2rem' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
+        <div style={{ padding: '0' }}>
+            <div className="header-actions" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem', flexWrap: 'wrap', gap: '1rem' }}>
                 <h1 style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>Manage Categories</h1>
                 <button
                     onClick={() => setIsEditing(!isEditing)}

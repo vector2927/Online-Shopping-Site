@@ -70,19 +70,15 @@ const AdminItems = () => {
     };
 
     return (
-        <div style={{ padding: '2rem' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
+        <div style={{ padding: '0' }}> {/* Removing hard padding as container handles it now, or keep small padding */}
+            <div className="header-actions" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem', flexWrap: 'wrap', gap: '1rem' }}>
                 <h1 style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>Manage Items</h1>
                 <button onClick={handleAddNew} className="btn btn-primary" style={{ gap: '0.5rem' }}>
                     <Plus size={18} /> Add New Item
                 </button>
             </div>
 
-            <div style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))',
-                gap: '1.5rem'
-            }}>
+            <div className="admin-grid">
                 {items.map(item => (
                     <div
                         key={item.id}
